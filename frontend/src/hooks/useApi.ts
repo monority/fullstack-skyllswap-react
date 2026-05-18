@@ -77,7 +77,29 @@ export const useApiInitialization = () => {
       }
     };
 
+    const checkHealth = async () => {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        const res = await apiFetch('/api/health', { signal: controller.signal });
+        clearTimeout(timeoutId);
+        
+        if (!res.ok) {
+          setApiStatus('down');
+          return;
+        }
+        const data = (await res.json()) as HealthResponse;
+        setApiStatus(data.status);
+      } catch {
+        setApiStatus('down');
+      }
+    };
+
     load();
+
+    const interval = setInterval(checkHealth, 10000);
+
+    return () => clearInterval(interval);
   }, [apiFetch]);
 
   return { apiStatus, skills, isLoading };
