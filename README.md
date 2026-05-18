@@ -1,4 +1,4 @@
-# SkillSwap
+# SkyllSwap
 
 Plateforme simple d'echange de competences entre pairs.
 

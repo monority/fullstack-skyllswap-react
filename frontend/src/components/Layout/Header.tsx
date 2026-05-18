@@ -27,7 +27,7 @@ function Header({ apiStatus, user, onLogout }: HeaderProps) {
               <path d="M2 12l10 5 10-5" />
             </svg>
           </span>
-          <span className="logo-text">SkillSwap</span>
+          <span className="logo-text">Skyllswap</span>
         </div>
         <span className="header-tagline">Échange de compétences local</span>
       </div>

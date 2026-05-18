@@ -1,6 +1,6 @@
 {
-  "name": "SkillSwap - Echange tes competences",
-  "short_name": "SkillSwap",
+  "name": "Skyllswap - Echange tes competences",
+  "short_name": "Skyllswap",
   "description": "Echange tes competences avec des personnes proches de chez toi",
   "start_url": "/",
   "display": "standalone",

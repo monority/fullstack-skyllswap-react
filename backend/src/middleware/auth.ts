@@ -44,7 +44,7 @@ export class AuthMiddleware {
         const headerParts = header.split(' ');
         const scheme = headerParts[0] || '';
         const token = headerParts[1] || '';
-        const cookieToken = req.cookies ? req.cookies[process.env.SESSION_COOKIE_NAME || 'skillswap_session'] : null;
+        const cookieToken = req.cookies ? req.cookies[process.env.SESSION_COOKIE_NAME || 'skyllswap_session'] : null;
         const accessToken = scheme === 'Bearer' && token ? token : cookieToken ?? null;
 
         if (!accessToken) {
@@ -73,7 +73,7 @@ export class AuthMiddleware {
     }
 
     verifyRefreshToken(req: Request, res: Response, next: NextFunction): void {
-        const refreshToken = req.cookies ? req.cookies[process.env.REFRESH_TOKEN_COOKIE_NAME || 'skillswap_refresh'] : null;
+        const refreshToken = req.cookies ? req.cookies[process.env.REFRESH_TOKEN_COOKIE_NAME || 'skyllswap_refresh'] : null;
 
         if (!refreshToken) {
             res.status(401).json({ message: 'Refresh token required' });

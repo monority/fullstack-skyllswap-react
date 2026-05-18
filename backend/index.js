@@ -31,7 +31,7 @@ if (!JWT_SECRET) {
 const ALLOWED_ORIGINS = FRONTEND_ORIGIN.split(',')
     .map((origin) => origin.trim())
     .filter(Boolean);
-const SESSION_COOKIE_NAME = process.env.SESSION_COOKIE_NAME || 'skillswap_session';
+const SESSION_COOKIE_NAME = process.env.SESSION_COOKIE_NAME || 'skyllswap_session';
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const hasLocalOrigin = ALLOWED_ORIGINS.some(
     (origin) => origin.includes('localhost') || origin.includes('127.0.0.1'),
@@ -171,7 +171,7 @@ const toPublicUser = (user) => ({
 
 const ACCESS_TOKEN_TTL = '15m';
 const REFRESH_TOKEN_TTL_MS = 7 * 24 * 60 * 60 * 1000;
-const REFRESH_TOKEN_COOKIE_NAME = process.env.REFRESH_TOKEN_COOKIE_NAME || 'skillswap_refresh';
+const REFRESH_TOKEN_COOKIE_NAME = process.env.REFRESH_TOKEN_COOKIE_NAME || 'skyllswap_refresh';
 
 let io = null;
 
@@ -392,7 +392,7 @@ app.use(express.json({ limit: '100kb' }));
 app.use(globalLimiter);
 
 app.get('/', (_req, res) => {
-    res.json({ status: 'ok', service: 'skillswap-api' });
+    res.json({ status: 'ok', service: 'skyllswap-api' });
 });
 
 app.post('/api/auth/register', authLimiter, async (req, res) => {
@@ -608,7 +608,7 @@ app.put('/api/profile/me', authRequired, csrfProtection, async (req, res) => {
 });
 
 app.get('/api/health', (_req, res) => {
-    res.json({ status: 'ok', service: 'skillswap-api' });
+    res.json({ status: 'ok', service: 'skyllswap-api' });
 });
 
 app.get('/api/skills', (req, res) => {
@@ -937,7 +937,7 @@ if (require.main === module) {
     const server = http.createServer(app);
     initSocketIO(server);
     server.listen(PORT, () => {
-        console.log(`SkillSwap API running on port ${PORT}`);
+        console.log(`Skyllswap API running on port ${PORT}`);
     });
 
     const shutdown = async () => {

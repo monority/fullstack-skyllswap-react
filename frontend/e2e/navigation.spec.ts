@@ -6,7 +6,7 @@ test.describe('Navigation et structure', () => {
   });
 
   test('page se charge correctement', async ({ page }) => {
-    await expect(page).toHaveTitle(/SkillSwap|Echange/);
+    await expect(page).toHaveTitle(/Skyllswap|Echange/);
     await expect(page.locator('h1')).toBeVisible();
   });
 

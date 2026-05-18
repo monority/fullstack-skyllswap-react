@@ -136,7 +136,7 @@ describe('Advanced Security Tests', () => {
         expect(cookies).toBeDefined();
 
         if (cookies) {
-            const sessionCookie = cookies.find(c => c.includes('skillswap_session'));
+            const sessionCookie = cookies.find(c => c.includes('skyllswap_session'));
             expect(sessionCookie).toBeDefined();
 
             if (sessionCookie) {

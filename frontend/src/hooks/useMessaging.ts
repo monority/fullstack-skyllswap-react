@@ -41,7 +41,7 @@ export const useMessaging = (
   const [messagingSending, setMessagingSending] = useState(false);
   const [lastSeenMap, setLastSeenMap] = useState<LastSeenMap>(() => {
     try {
-      const stored = localStorage.getItem('skillswap_lastSeen');
+      const stored = localStorage.getItem('skyllswap_lastSeen');
       return stored ? JSON.parse(stored) : {};
     } catch {
       return {};
@@ -201,7 +201,7 @@ export const useMessaging = (
   const markConvRead = useCallback((convId: number, updatedAt: string) => {
     setLastSeenMap(prev => {
       const next = { ...prev, [String(convId)]: updatedAt };
-      localStorage.setItem('skillswap_lastSeen', JSON.stringify(next));
+      localStorage.setItem('skyllswap_lastSeen', JSON.stringify(next));
       return next;
     });
   }, []);

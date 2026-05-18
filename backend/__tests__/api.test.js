@@ -63,7 +63,7 @@ describe('API basic behavior', () => {
         expect(response.status).toBe(200);
         expect(response.body).toMatchObject({
             status: 'ok',
-            service: 'skillswap-api',
+            service: 'skyllswap-api',
         });
     });
 
@@ -143,7 +143,7 @@ describe('API business flows with Prisma mocks', () => {
             name: 'Alice',
         });
         expect(response.headers['set-cookie']).toEqual(
-            expect.arrayContaining([expect.stringContaining('skillswap_session=')]),
+            expect.arrayContaining([expect.stringContaining('skyllswap_session=')]),
         );
         expect(mockPrisma.user.create).toHaveBeenCalledWith(
             expect.objectContaining({
@@ -230,7 +230,7 @@ describe('API business flows with Prisma mocks', () => {
             name: 'Lea',
         });
         expect(response.headers['set-cookie']).toEqual(
-            expect.arrayContaining([expect.stringContaining('skillswap_session=')]),
+            expect.arrayContaining([expect.stringContaining('skyllswap_session=')]),
         );
     });
 

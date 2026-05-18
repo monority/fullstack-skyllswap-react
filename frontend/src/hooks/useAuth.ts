@@ -40,14 +40,14 @@ export const useAuth = (apiFetch: ApiFetch) => {
   const setCsrfToken = useCallback((token: string | null) => {
     setCsrfTokenState(token);
     if (token) {
-      localStorage.setItem('skillswap_csrf', token);
+      localStorage.setItem('skyllswap_csrf', token);
     } else {
-      localStorage.removeItem('skillswap_csrf');
+      localStorage.removeItem('skyllswap_csrf');
     }
   }, []);
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('skillswap_csrf');
+    const storedToken = localStorage.getItem('skyllswap_csrf');
     if (storedToken) {
       setCsrfTokenState(storedToken);
       apiService.setCsrfToken(storedToken);

@@ -224,7 +224,7 @@ function App() {
                   <div className="main-section__body">
                     <div className="home-welcome">
                       <h2 className="home-welcome__title">Bonjour, {currentUser.name.split(' ')[0]}&nbsp;👋</h2>
-                      <p className="home-welcome__sub">Voici un résumé de votre activité sur SkillSwap.</p>
+                      <p className="home-welcome__sub">Voici un résumé de votre activité sur Skyllswap.</p>
                     </div>
 
                     <div className="home-stats">
@@ -458,7 +458,7 @@ function App() {
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 </div>
-                <h1>SkillSwap</h1>
+                <h1>Skyllswap</h1>
                 <p>Échangez vos compétences,<br />apprenez ensemble.</p>
                 <ul className="auth-bullets">
                   <li>
