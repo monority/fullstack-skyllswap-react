@@ -40,6 +40,10 @@
     "socket.io-client": "^4.8.3",
     "tsx": "^4.21.0"
   },
+  "overrides": {
+    "qs": "^6.15.2",
+    "ws": "8.20.1"
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/compression": "^1.8.1",
