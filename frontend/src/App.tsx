@@ -453,12 +453,16 @@ function App() {
           <main className="auth-landing" aria-busy={isLoading}>
             <div className="auth-landing-inner">
               <div className="auth-landing-brand">
-                <div className="auth-logo">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
+                <div className="auth-logo__title">
+
+                  <div className="auth-logo">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                  <h1>Skyllswap</h1>
                 </div>
-                <h1>Skyllswap</h1>
+
                 <p>Échangez vos compétences,<br />apprenez ensemble.</p>
                 <ul className="auth-bullets">
                   <li>
@@ -497,6 +501,45 @@ function App() {
                   onRegister={handleRegister}
                   loading={false}
                 />
+              </div>
+            </div>
+
+            <div className="auth-health-module">
+              <div className="auth-health-module__card">
+                <div className="auth-health-module__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                  </svg>
+                </div>
+                <div className="auth-health-module__body">
+                  <div className="auth-health-module__top">
+                    <span className="auth-health-module__title">Statut du serveur</span>
+                    <div className={`auth-health-module__pill${apiStatus === 'ok' ? ' auth-health-module__pill--on' : apiStatus === 'checking' ? ' auth-health-module__pill--checking' : ' auth-health-module__pill--off'}`}>
+                      <span className={`auth-health-module__dot${apiStatus === 'ok' ? ' auth-health-module__dot--on' : apiStatus === 'checking' ? ' auth-health-module__dot--checking' : ' auth-health-module__dot--off'}`} />
+                      {apiStatus === 'ok' ? 'Opérationnel' : apiStatus === 'down' ? 'Hors ligne' : 'Vérification...'}
+                    </div>
+                  </div>
+                  <div className="auth-health-module__details">
+                    <div className="auth-health-module__detail">
+                      <span className="auth-health-module__detail-label">Service</span>
+                      <span className="auth-health-module__detail-value">API Skyllswap</span>
+                    </div>
+                    <div className="auth-health-module__divider" />
+                    <div className="auth-health-module__detail">
+                      <span className="auth-health-module__detail-label">Statut</span>
+                      <span className="auth-health-module__detail-value">{apiStatus === 'ok' ? 'En ligne' : apiStatus === 'down' ? 'Hors ligne' : 'Vérification...'}</span>
+                    </div>
+                    <div className="auth-health-module__divider" />
+                    <div className="auth-health-module__detail">
+                      <span className="auth-health-module__detail-label">Rafraîchissement</span>
+                      <span className="auth-health-module__detail-value">Toutes les 10 secondes</span>
+                    </div>
+                  </div>
+                </div>
+                <div className={`auth-health-module__bar${apiStatus === 'ok' ? ' auth-health-module__bar--on' : apiStatus === 'checking' ? ' auth-health-module__bar--checking' : ' auth-health-module__bar--off'}`} />
               </div>
             </div>
           </main>
