@@ -502,6 +502,7 @@ function App() {
               </div>
             </div>
 
+            {!isLoading && (
             <div className="auth-health-module">
               <div className="auth-health-module__card">
                 <div className="auth-health-module__icon">
@@ -540,6 +541,7 @@ function App() {
                 <div className={`auth-health-module__bar${apiStatus === 'ok' ? ' auth-health-module__bar--on' : apiStatus === 'checking' ? ' auth-health-module__bar--checking' : ' auth-health-module__bar--off'}`} />
               </div>
             </div>
+            )}
           </main>
         )}
       </div>
