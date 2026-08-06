@@ -142,8 +142,8 @@ importers:
         specifier: ^8.61.1
         version: 8.61.1(eslint@9.39.4)(typescript@6.0.3)
       '@vitejs/plugin-react':
-        specifier: ^6.0.2
-        version: 6.0.2(vite@8.0.16)
+        specifier: ^6.0.5
+        version: 6.0.5(vite@8.0.16)
       esbuild:
         specifier: ^0.28.1
         version: 0.28.1
@@ -2302,8 +2302,8 @@ packages:
     dev: true
     optional: true
 
-  /@vitejs/plugin-react@6.0.2(vite@8.0.16):
-    resolution: {integrity: sha512-DlSMqo4WhThw4vB8Mpn0Woe9J+Jfq1geJ61AKW0QEgLzGMNwtIMdxbDUzLxcun8W7NbJO0e2Jg/Nxm3cCSVzzg==}
+  /@vitejs/plugin-react@6.0.5(vite@8.0.16):
+    resolution: {integrity: sha512-BOVzne/NL162sMdResB25mUv+vWMF5NoAjNf09TeGlE7ZpszZWSD3winycicLJw72yeVsoCn/2kOhEuCvEShMA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@rolldown/plugin-babel': ^0.1.7 || ^0.2.0
